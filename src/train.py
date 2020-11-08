@@ -59,5 +59,7 @@ if __name__=="__main__":
     args=parser.parse_args()
     run(fold=args.fold,model=args.model)
  #some comments are missing 
+ 
+ #some typos fixed
 
     
