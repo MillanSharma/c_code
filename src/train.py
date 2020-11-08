@@ -37,14 +37,6 @@ def run(fold, model):
     print("datatype of preds is:",type(preds))
     print("size of pred:",len(preds))
     print("one such sample of pred is :",preds[33],preds[35],preds[56])
-    '''for i in range(len(preds)):
-        if float(i) < 1.5:
-            preds=1
-        elif float(i) < 2.5:
-            preds=2
-        else:
-            preds=3
-    preds=np.array(preds)'''
     accuracy=metrics.f1_score(y_valid,preds,average="micro")
     print(f"Fold={fold}: Acuuracy={accuracy}")
     joblib.dump(clf,os.path.join(config.MODEL_OUTPUT,f'dt_{fold}.bin'))
